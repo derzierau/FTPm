@@ -1,0 +1,18 @@
+version: 1
+base:
+  base_hourly_currency: 'EUR'
+integrations:
+  sevDesk:
+    API_TOKEN: '<API_TOKEN>'
+services: 
+  developer:
+    public_name: 'Senior Fullstack Developer'
+    base_hourly_rate: 75
+    short_name: 'dev'
+  architect:
+    short_name: 'arc'
+    public_name: 'Cloud & Software Architect'
+    base_hourly_rate: 75
+  product_engineer:
+    public_name: 'Product Engineer'
+    short_name: 'pe'
