@@ -4,6 +4,16 @@ base:
 integrations:
   sevDesk:
     API_TOKEN: '<API_TOKEN>'
+accounts:
+  - public_name: 'Peix GmbH'
+    short_name: 'peix'
+    projects:
+    - short_name: 'iisy'
+      name: 'iisy'
+      repo: ''
+    - short_name: 'mailer'
+      name: 'mailer'
+      repo: ''
 services: 
   developer:
     public_name: 'Senior Fullstack Developer'
