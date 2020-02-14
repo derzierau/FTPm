@@ -2,36 +2,38 @@ from project_manager import Project
 from datetime import datetime
 import pandas as pd
 from helper import DB_PATH
+from database import Database
 
 START_TIMER_ACTION = 'start_timer_action'
 END_TIMER_ACTION = 'end_timer_action'
 
 
-def start_time(project=None):
-    project = Project().current_project
-    account = Project().current_account
-    timestamp = datetime.now()
-    entry = pd.DataFrame({
-      'project': [project],
-      'account': [account],
-      'timestamp': [timestamp],
-      'action': [START_TIMER_ACTION],
-    })
-    try:
-        db = pd.read_csv(DB_PATH)
-        print(db)
+class Timer:
+    def __init__(self):
+        self.project = Project().current_project
+        self.account = Project().current_account
+        self.db = Database()
 
-        _db = db.append(entry)
-        _db.to_csv(DB_PATH, index=False)
-        print(_db)
+    def end_timer(self):
+        raise NotImplementedError
 
-    except:
-        print(entry)
+    def start_time(self, project=None):
+        timestamp = datetime.now()
+        entry = pd.DataFrame({
+            'project': [project],
+            'account': [account],
+            'timestamp': [timestamp],
+            'action': [START_TIMER_ACTION],
+        })
+        try:
+            snapshot = self.db.get_snapshot()
+            _snapshot = snapshot.append(entry)
+            self.db.save(_snapshot)
+        except:
+            self.db.save(entry)
 
-        entry.to_csv(DB_PATH, index=False)
-    
-    return {
-        'project': project,
-        'account': account,
-        'timestamp': timestamp
-    }
+        return {
+            'project': project,
+            'account': account,
+            'timestamp': timestamp
+        }

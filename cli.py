@@ -1,7 +1,7 @@
 import click
 from project_manager import Project
 from config import import_config
-from timer import start_time
+from timer import Timer
 project = Project()
 
 
@@ -16,14 +16,14 @@ def init(config_file_path):
 
 @click.command('start')
 def start_timer():
-  entry = start_time()
+  entry = Timer().start_time()
   click.echo(f"Starting timer for {entry['account']}/{entry['project']}")
 
 
 @click.command('end')
 @click.option('--project', default=None, help="Specify a project")
 def end_timer(project: str):
-  click.echo(project)
+  Timer().end_timer()
 
 cli.add_command(start_timer)
 cli.add_command(end_timer)
