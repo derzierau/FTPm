@@ -18,8 +18,8 @@ class Timer:
         self.db = Database()
 
     def entry(self, action, *args, **kwargs):
-        timestamp = datetime.now()
-        return pd.DataFrame({
+        timestamp = pd.Timestamp.now()
+        df = pd.DataFrame({
             'project': [kwargs.get('project', self.project)],
             'account': [kwargs.get('account', self.account)],
             'path': [kwargs.get('path', self.current_path)],
@@ -28,6 +28,7 @@ class Timer:
             'timestamp': [timestamp],
             'action': [action],
         })
+        return df
 
     def end_timer(self):
         # First end all open timer

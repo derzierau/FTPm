@@ -11,7 +11,8 @@ class Database:
 
     def get_snapshot(self):
         try:
-            return pd.read_hdf(DB_PATH_HD5, 'table')
+            data = pd.read_csv(DB_PATH, parse_dates=['timestamp'])
+            return data
 
         except FileNotFoundError as error:
             return pd.DataFrame()
@@ -28,7 +29,7 @@ class Database:
     
     def save(self, frame: pd.DataFrame):
         frame.to_csv(DB_PATH, index=False)
-        frame.to_hdf(DB_PATH_HD5, 'table', append=True, index=False)
+        # frame.to_hdf(DB_PATH_HD5, 'table', append=True, index=False, data_columns=True)
 
 
     def open_timer(self):
