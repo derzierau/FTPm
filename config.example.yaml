@@ -1,13 +1,22 @@
 version: 1
 base:
   base_hourly_currency: 'EUR'
+  base_path: ''
 integrations:
   sevDesk:
+    hooks:
+    - event: 'start'
+      action: 'func'
     API_TOKEN: '<API_TOKEN>'
 accounts:
   - public_name: 'Peix GmbH'
     short_name: 'peix'
     projects:
+    - short_name: 'ftpm'
+      open_with: 'code'
+      name: 'Freelance'
+      base_hourly_rate: 1200
+      repo: ''
     - short_name: 'iisy'
       name: 'iisy'
       repo: ''
@@ -15,14 +24,12 @@ accounts:
       name: 'mailer'
       repo: ''
 services: 
-  developer:
-    public_name: 'Senior Fullstack Developer'
-    base_hourly_rate: 75
-    short_name: 'dev'
-  architect:
-    short_name: 'arc'
-    public_name: 'Cloud & Software Architect'
-    base_hourly_rate: 75
-  product_engineer:
-    public_name: 'Product Engineer'
-    short_name: 'pe'
+- public_name: 'Senior Fullstack Developer'
+  base_hourly_rate: 75
+  short_name: 'dev'
+  default: true
+- short_name: 'arc'
+  public_name: 'Cloud & Software Architect'
+  base_hourly_rate: 75
+- public_name: 'Product Engineer'
+  short_name: 'pe'
