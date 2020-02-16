@@ -22,6 +22,7 @@ accounts:
       repo: ''
     - short_name: 'mailer'
       name: 'mailer'
+      open_with: 'code'
       repo: ''
 services: 
 - public_name: 'Senior Fullstack Developer'
