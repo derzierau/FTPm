@@ -30,18 +30,19 @@ def init(config_file_path):
 
 
 @click.command('start')
+@click.option('-o', '--open', is_flag=True, default=False, prompt="Open IDE? y or n", help="Tell ftpm to open the directory with your IDE")
 @click.option('-m', '--message', default=None, help="Message to save with starting job")
 @click.option('-s', '--service', default=None, help="Your service short_name, defaults to the first entry of config services")
 @click.option('-a', '--account', default=None, help="Your service short_name, defaults to the first entry of config services")
 @click.option('-p', '--project', default=None, help="Your service short_name, defaults to the first entry of config services")
-def start_timer(message, service, account, project):
+def start_timer(open, message, service, account, project):
     account = account if account else Project().current_account
     project = project if project else Project().current_project
     entry = Timer().start_time(message=message, service=service,
                                account=account, project=project)
     # Check if open_with available
     config = Config().get_project_config(account_name=account, project_name=project)
-    if 'open_with' in config:
+    if 'open_with' in config and open:
         os.system(f"{config['open_with']} {Project().current_path}")
 
     click.echo(f"Starting timer for {entry['account']}/{entry['project']}")
