@@ -17,14 +17,21 @@ class Project():
         for account in self.config['accounts']:
             for project in account['projects']:
                 Project.generate_new_project(
-                    account['short_name'], project['short_name'])
+                    account['short_name'], project)
 
     @staticmethod
-    def generate_new_project(account: str, project_name: str):
+    def generate_new_project(account: str, project):
         try:
-            path = f'{ROOT_PROJECT_PATH}/{account}/{project_name}'
+            path = f"{ROOT_PROJECT_PATH}/{account}/{project['short_name']}"
             log.info(f'Adding Project to {path}')
             os.makedirs(path)
+            if 'repo' in project and project['repo']:
+                try:
+                    os.system(f"git clone {project['repo']} {path}")
+                except OSError as error:
+                    log.error(error)
+                else:
+                    pass
         except FileExistsError as e:
             log.error(f'File {path} exists')
 

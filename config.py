@@ -51,7 +51,9 @@ class Config:
             return default[0]
         return self.get_services()[0]
 
-    def get_services(self):
+    def get_services(self, short_name = None):
         if not self.config:
             raise FileNotFoundError
+        if short_name:
+          return [service for service in self.config['services'] if service['short_name'] == short_name][0]
         return self.config['services']

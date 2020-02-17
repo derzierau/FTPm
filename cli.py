@@ -1,3 +1,4 @@
+#!/Users/admin/freelance/timesaver/.env/bin/python
 import click
 from project_manager import Project
 from config import import_config
@@ -10,11 +11,11 @@ import logging
 
 logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-
+logging.FileHandler('logs.txt')
 # Initialize signal catch
 
 
-@click.group()
+@click.group(name="ftpm")
 def cli():
     pass
 

@@ -16,14 +16,12 @@ accounts:
       open_with: 'code'
       name: 'Freelance'
       base_hourly_rate: 1200
-      repo: ''
+      repo: 'https://github.com/derzierau/FTPm.git'
     - short_name: 'iisy'
       name: 'iisy'
-      repo: ''
     - short_name: 'mailer'
       name: 'mailer'
       open_with: 'code'
-      repo: ''
 services: 
 - public_name: 'Senior Fullstack Developer'
   base_hourly_rate: 75

@@ -7,7 +7,7 @@ from helper import DB_PATH, START_TIMER_ACTION, END_TIMER_ACTION, DB_PATH_HD5
 class Database:
     def __init__(self):
         self.config = get_config()
-        self.store = pd.HDFStore('store.h5')
+        # self.store = pd.HDFStore('store.h5')
 
     def get_snapshot(self):
         try:
