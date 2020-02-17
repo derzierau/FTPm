@@ -61,7 +61,7 @@ def end_timer(project: str):
 
 @click.command('stats')
 def stats():
-    click.echo(Stats().duration_sum_by_key('path'))
+    click.echo(Stats().duration_sum_by_key())
 
 
 cli.add_command(start_timer)
