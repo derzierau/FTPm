@@ -1,4 +1,4 @@
-# Freelance Time- and Projectmanagement CLI - FTPm
+# freilanz - CLI Freelancing Suite
 
 ## Developer Set Up
 ```
