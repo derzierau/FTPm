@@ -1,6 +1,6 @@
 import os
-from helper import split, ROOT_PROJECT_PATH
-from config import get_config
+from FTPm.helper import split, ROOT_PROJECT_PATH
+from FTPm.config import get_config
 import logging
 
 log = logging.getLogger(__name__)

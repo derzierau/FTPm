@@ -1,10 +1,13 @@
-from project_manager import Project
 from datetime import datetime
 import pandas as pd
-from helper import DB_PATH, START_TIMER_ACTION, END_TIMER_ACTION
-from database import Database
-from config import Config
 import logging
+
+
+from FTPm.helper import DB_PATH, START_TIMER_ACTION, END_TIMER_ACTION
+from FTPm.database import Database
+from FTPm.project_manager import Project 
+from FTPm.config import Config
+
 
 log = logging.getLogger(__name__)
 

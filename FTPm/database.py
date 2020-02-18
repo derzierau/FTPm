@@ -1,7 +1,7 @@
-from config import get_config
 import pandas as pd
 import tempfile
-from helper import DB_PATH, START_TIMER_ACTION, END_TIMER_ACTION, DB_PATH_HD5
+from FTPm.helper import DB_PATH, START_TIMER_ACTION, END_TIMER_ACTION, DB_PATH_HD5
+from FTPm.config import get_config
 
 
 class Database:

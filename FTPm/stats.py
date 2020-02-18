@@ -1,8 +1,8 @@
-from database import Database
+from FTPm.database import Database
 import pandas as pd
 import logging
-from config import Config
-from project_manager import Project
+from FTPm.config import Config
+from FTPm.project_manager import Project
 log = logging.getLogger(__name__)
 
 

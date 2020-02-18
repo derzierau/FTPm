@@ -2,9 +2,7 @@
 
 ## Developer Set Up
 ```
-git clone 
-virtualenv .env
-pip install -r requirements.txt
+python3 setup.py install
 ```
 
 ```

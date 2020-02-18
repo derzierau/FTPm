@@ -1,7 +1,8 @@
 import yaml
 import json
-from helper import CONFIG_PATH
 import logging
+
+from FTPm.helper import CONFIG_PATH
 
 log = logging.getLogger(__name__)
 

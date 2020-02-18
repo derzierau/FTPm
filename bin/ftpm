@@ -1,11 +1,11 @@
-#!/Users/admin/freelance/timesaver/.env/bin/python
+#! /usr/bin/env python3
 import click
-from project_manager import Project
-from config import import_config
-from timer import Timer
-from stats import Stats
-from signals import Signals
-from config import Config
+from FTPm.project_manager import Project
+from FTPm.config import import_config
+from FTPm.timer import Timer
+from FTPm.stats import Stats
+from FTPm.signals import Signals
+from FTPm.config import Config
 import os
 import logging
 
@@ -30,7 +30,7 @@ def init(config_file_path):
 
 
 @click.command('start')
-@click.option('-o', '--open', is_flag=True, default=False, prompt="Open IDE? y or n", help="Tell ftpm to open the directory with your IDE")
+@click.option('-o', '--open', is_flag=True, default=False, help="Tell ftpm to open the directory with your IDE")
 @click.option('-m', '--message', default=None, help="Message to save with starting job")
 @click.option('-s', '--service', default=None, help="Your service short_name, defaults to the first entry of config services")
 @click.option('-a', '--account', default=None, help="Your service short_name, defaults to the first entry of config services")
