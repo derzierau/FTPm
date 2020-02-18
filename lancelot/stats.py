@@ -1,8 +1,8 @@
-from FTPm.database import Database
+from lancelot.database import Database
 import pandas as pd
 import logging
-from FTPm.config import Config
-from FTPm.project_manager import Project
+from lancelot.config import Config
+from lancelot.project_manager import Project
 log = logging.getLogger(__name__)
 
 

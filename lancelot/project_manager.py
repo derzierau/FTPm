@@ -1,6 +1,6 @@
 import os
-from FTPm.helper import split, ROOT_PROJECT_PATH
-from FTPm.config import get_config
+from lancelot.helper import split, ROOT_PROJECT_PATH
+from lancelot.config import get_config
 import logging
 
 log = logging.getLogger(__name__)

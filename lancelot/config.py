@@ -2,7 +2,7 @@ import yaml
 import json
 import logging
 
-from FTPm.helper import CONFIG_PATH
+from lancelot.helper import CONFIG_PATH
 
 log = logging.getLogger(__name__)
 

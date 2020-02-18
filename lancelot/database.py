@@ -1,7 +1,7 @@
 import pandas as pd
 import tempfile
-from FTPm.helper import DB_PATH, START_TIMER_ACTION, END_TIMER_ACTION, DB_PATH_HD5
-from FTPm.config import get_config
+from lancelot.helper import DB_PATH, START_TIMER_ACTION, END_TIMER_ACTION, DB_PATH_HD5
+from lancelot.config import get_config
 
 
 class Database:

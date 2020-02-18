@@ -3,10 +3,10 @@ import pandas as pd
 import logging
 
 
-from FTPm.helper import DB_PATH, START_TIMER_ACTION, END_TIMER_ACTION
-from FTPm.database import Database
-from FTPm.project_manager import Project 
-from FTPm.config import Config
+from lancelot.helper import DB_PATH, START_TIMER_ACTION, END_TIMER_ACTION
+from lancelot.database import Database
+from lancelot.project_manager import Project 
+from lancelot.config import Config
 
 
 log = logging.getLogger(__name__)
