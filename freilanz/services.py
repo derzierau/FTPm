@@ -1,4 +1,4 @@
-from lancelot.config import get_config
+from freilanz.config import get_config
 
 class Services():
   def __init__(self):

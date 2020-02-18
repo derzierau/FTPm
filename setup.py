@@ -1,13 +1,13 @@
 from setuptools import setup
 
 setup(
-    name="lancelot",
+    name="freilanz",
     version="0.1.0",
     description="CLI Freelancing Suite",
     author="Ole Zierau",
     author_email="kontakt@olezierau.de",
-    packages=["lancelot"],
-    scripts=["bin/lanc"],
+    packages=["freilanz"],
+    scripts=["bin/lanz"],
     install_requires=[
         "Click>=7.0,<8.0",
         "pandas>=1.0.1,<2",

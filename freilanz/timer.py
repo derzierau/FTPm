@@ -3,10 +3,10 @@ import pandas as pd
 import logging
 
 
-from lancelot.helper import DB_PATH, START_TIMER_ACTION, END_TIMER_ACTION
-from lancelot.database import Database
-from lancelot.project_manager import Project 
-from lancelot.config import Config
+from freilanz.helper import DB_PATH, START_TIMER_ACTION, END_TIMER_ACTION
+from freilanz.database import Database
+from freilanz.project_manager import Project 
+from freilanz.config import Config
 
 
 log = logging.getLogger(__name__)

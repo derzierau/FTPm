@@ -1,6 +1,6 @@
 import os
-from lancelot.helper import split, ROOT_PROJECT_PATH
-from lancelot.config import get_config
+from freilanz.helper import split, ROOT_PROJECT_PATH
+from freilanz.config import get_config
 import logging
 
 log = logging.getLogger(__name__)

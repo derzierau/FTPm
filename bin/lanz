@@ -1,11 +1,11 @@
 #! /usr/bin/env python3
 import click
-from lancelot.project_manager import Project
-from lancelot.config import import_config
-from lancelot.timer import Timer
-from lancelot.stats import Stats
-from lancelot.signals import Signals
-from lancelot.config import Config
+from freilanz.project_manager import Project
+from freilanz.config import import_config
+from freilanz.timer import Timer
+from freilanz.stats import Stats
+from freilanz.signals import Signals
+from freilanz.config import Config
 import os
 import logging
 

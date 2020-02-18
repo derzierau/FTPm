@@ -1,8 +1,8 @@
-from lancelot.database import Database
+from freilanz.database import Database
 import pandas as pd
 import logging
-from lancelot.config import Config
-from lancelot.project_manager import Project
+from freilanz.config import Config
+from freilanz.project_manager import Project
 log = logging.getLogger(__name__)
 
 

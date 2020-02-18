@@ -1,7 +1,7 @@
 import pandas as pd
 import tempfile
-from lancelot.helper import DB_PATH, START_TIMER_ACTION, END_TIMER_ACTION, DB_PATH_HD5
-from lancelot.config import get_config
+from freilanz.helper import DB_PATH, START_TIMER_ACTION, END_TIMER_ACTION, DB_PATH_HD5
+from freilanz.config import get_config
 
 
 class Database:
