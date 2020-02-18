@@ -1,4 +1,4 @@
-from FTPm.config import get_config
+from lancelot.config import get_config
 
 
 

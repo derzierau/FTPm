@@ -1,11 +1,11 @@
 #! /usr/bin/env python3
 import click
-from FTPm.project_manager import Project
-from FTPm.config import import_config
-from FTPm.timer import Timer
-from FTPm.stats import Stats
-from FTPm.signals import Signals
-from FTPm.config import Config
+from lancelot.project_manager import Project
+from lancelot.config import import_config
+from lancelot.timer import Timer
+from lancelot.stats import Stats
+from lancelot.signals import Signals
+from lancelot.config import Config
 import os
 import logging
 
