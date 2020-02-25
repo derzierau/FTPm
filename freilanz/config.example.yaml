@@ -1,0 +1,58 @@
+
+
+
+base:
+  user: 
+    name: 'Ole Zierau'
+    address:
+      city: ''
+      zip_code: ''
+      street: ''
+      country: ''
+  invoice:
+    iban: ''
+    currency: 'EUR'
+  environment:
+    project_root: ''
+# integrations:
+#   sevDesk:
+#     hooks:
+#     - event: 'start'
+#       action: 'func'
+#     API_TOKEN: '<API_TOKEN>'
+profiles:
+  - name: 'dopamin GmbH'
+    id: 'dopamin'
+    projects: 
+    - id: 'homepage'
+      editor: 'code'
+      name: 'Homepage dopamin GmbH'
+  - name: 'Peix GmbH'
+    id: 'peix'
+    projects:
+    - id: 'auth-service'
+      editor: 'code'
+      name: 'Auth* Service'
+      
+    - id: 'ftpm'
+      editor: 'code'
+      name: 'Freelance'
+      hourly_rate: 1200
+      projects:
+        - id: 'test'
+      repo: 'https://github.com/derzierau/freilanz.git'
+    - id: 'iisy'
+      name: 'iisy'
+    - id: 'mailer'
+      name: 'mailer'
+      open_with: 'code'
+positions: 
+- name: 'Senior Fullstack Developer'
+  hourly_rate: 75
+  id: 'dev'
+  default: true
+- id: 'arc'
+  name: 'Cloud & Software Architect'
+  hourly_rate: 75
+- name: 'Product Engineer'
+  id: 'pe'

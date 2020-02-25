@@ -1,0 +1,2 @@
+class IntegrationFactory():
+  pass

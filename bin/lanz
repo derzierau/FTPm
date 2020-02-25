@@ -1,0 +1,79 @@
+#! /usr/bin/env python3
+import click
+from freilanz.helper import *
+from freilanz.commands.init import init as l_init
+from freilanz.commands.start import start
+from freilanz.commands.stop import stop
+from freilanz.commands.status import status
+from freilanz.commands.scaffold import scaffold
+from freilanz.config import find_config_file
+
+import os
+
+
+@click.group(name="lanz")
+def cli():
+    pass
+
+
+@click.command('init')
+@click.option('--name', '-n', help="We need your name for printing your invoices", prompt='What is your name?', required=True)
+@click.option('--city', '-c', prompt='In which city do you live?', required=True)
+@click.option('--zip', '-z', prompt='Which ZIP Code your city has?', required=True)
+@click.option('--street', '-s', prompt='What is your street and house number?', required=True)
+@click.option('--country', '-co', prompt='In which country you live?', required=True)
+@click.option('--iban', '-i', help="Please provide your IBAN", required=False)
+@click.option('--currency', '-cur', prompt='Please provide your currency', required=True)
+def init(name, city, zip, street, country, currency, iban=None):
+    '''
+        Initialize freilanz \n
+        -> making root dir from os.env "FREILANZ_PATH" or cwddir
+        -> making sql table
+        -> copy base config file to root 
+    '''
+    l_init(click, name=name, city=city, zip_code=zip, street=street,
+           country=country, currency=currency, iban=iban)
+
+
+@click.command('scaffold', help='Scaffold project structure and updates config in base path')
+def scaffold_config():
+    scaffold(click)
+
+
+@click.command('start')
+@click.option('-ago', '--ago', default=None, help="If you started already you can present the clock. Values 10m 15m 20m 30m 1h")
+@click.option('-o', '--open', is_flag=True, default=False, help="Tell ftpm to open the directory with your IDE")
+@click.option('-m', '--message', default=None, help="Message to save with starting job")
+@click.option('-s', '--service', default=None, help="Your service short_name, defaults to the first entry of config services")
+@click.option('-a', '--account', default=None, help="Your service short_name, defaults to the first entry of config services")
+@click.option('-p', '--project', default=None, help="Your service short_name, defaults to the first entry of config services")
+def start_timer(ago, open, message, service, account, project):
+    start(click, ago=ago, open=open, message=message,
+          service=service, account=account, project=project)
+
+
+
+@click.command('stop')
+@click.option('-m', '--message', default=None, help="Message to save with starting job")
+@click.option('-s', '--service', default=None, help="Your service short_name, defaults to the first entry of config services")
+@click.option('-a', '--account', default=None, help="Your service short_name, defaults to the first entry of config services")
+@click.option('-p', '--project', default=None, help="Your service short_name, defaults to the first entry of config services")
+def end_timer(message, service, account, project):
+    stop(click, message=message, service=service,
+         account=account, project=project)
+
+
+@click.command('status')
+def status_command():
+    status(click)
+
+
+cli.add_command(start_timer)
+cli.add_command(end_timer)
+cli.add_command(scaffold_config)
+cli.add_command(init)
+cli.add_command(status_command)
+
+
+if __name__ == "__main__":
+    cli()
