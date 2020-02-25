@@ -19,7 +19,7 @@ def start(click, **kwargs):
     open_timer = db.open_timer()
     if not open_timer.empty:
         sure = click.confirm(
-            f'{open_timer.to_string()}\n These timers are still open. Would you like to stop them?', abort=True)
+            f'{open_timer.to_string()}\n These timers are still open. Would you like to stop them?')
         if sure:
             # Stop timer
             for index, entry in open_timer.iterrows():
