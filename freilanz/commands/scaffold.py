@@ -4,7 +4,7 @@ from freilanz.helper import make_dirs
 
 def scaffold(click):
     config = Config()
-
+    
     if config.config:
         root_dir = config.config['base']['user']['environment']['root_dir']
         # print(root_dir['environment'])

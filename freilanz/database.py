@@ -86,7 +86,6 @@ class Database:
         _group_by = data.groupby(
             ['service', pd.Grouper(freq='M', key='timestamp')])['duration'].sum()
         positions = {}
-        for index in _group_by.groupby()
         return _group_by.to_string()
 
     def open_timer(self):
