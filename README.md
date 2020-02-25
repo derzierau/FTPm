@@ -4,6 +4,7 @@
 
 ```bash
 python3 setup.py install
+lanz init
 ```
 
 ## CLI Commands
