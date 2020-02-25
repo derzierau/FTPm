@@ -1,4 +1,4 @@
-{ buildPythonApplication, fetchPypi, pandas, pyyaml, click }:
+{ buildPythonApplication, fetchPypi, pandas, pyyaml, click, appdirs }:
 let
 in buildPythonApplication rec {
   pname = "freilanz";

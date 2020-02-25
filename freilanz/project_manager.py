@@ -1,5 +1,5 @@
 import os
-from freilanz.helper import split, ROOT_PROJECT_PATH
+from freilanz.helper import split, FREILANZ_ROOT_DIR
 from freilanz.config import get_config
 import logging
 
@@ -14,15 +14,15 @@ class Project():
         self.config = get_config()
 
     def init(self):
-        for account in self.config['accounts']:
-            for project in account['projects']:
+        for profile in self.config['profiles']:
+            for project in profile['projects']:
                 Project.generate_new_project(
-                    account['short_name'], project)
+                    profile['id'], project)
 
     @staticmethod
     def generate_new_project(account: str, project):
         try:
-            path = f"{ROOT_PROJECT_PATH}/{account}/{project['short_name']}"
+            path = f"{FREILANZ_ROOT_DIR}/{account}/{project['id']}"
             log.info(f'Adding Project to {path}')
             os.makedirs(path)
             if 'repo' in project and project['repo']:

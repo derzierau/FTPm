@@ -1,34 +1,58 @@
-version: 1
+
+
+
 base:
-  base_hourly_currency: 'EUR'
-  base_path: ''
-integrations:
-  sevDesk:
-    hooks:
-    - event: 'start'
-      action: 'func'
-    API_TOKEN: '<API_TOKEN>'
-accounts:
-  - public_name: 'Peix GmbH'
-    short_name: 'peix'
+  user: 
+    name: 'Ole Zierau'
+    address:
+      city: ''
+      zip_code: ''
+      street: ''
+      country: ''
+  invoice:
+    iban: ''
+    currency: 'EUR'
+  environment:
+    project_root: ''
+# integrations:
+#   sevDesk:
+#     hooks:
+#     - event: 'start'
+#       action: 'func'
+#     API_TOKEN: '<API_TOKEN>'
+profiles:
+  - name: 'dopamin GmbH'
+    id: 'dopamin'
+    projects: 
+    - id: 'homepage'
+      editor: 'code'
+      name: 'Homepage dopamin GmbH'
+  - name: 'Peix GmbH'
+    id: 'peix'
     projects:
-    - short_name: 'ftpm'
-      open_with: 'code'
+    - id: 'auth-service'
+      editor: 'code'
+      name: 'Auth* Service'
+      
+    - id: 'ftpm'
+      editor: 'code'
       name: 'Freelance'
-      base_hourly_rate: 1200
-      repo: 'https://github.com/derzierau/FTPm.git'
-    - short_name: 'iisy'
+      hourly_rate: 1200
+      projects:
+        - id: 'test'
+      repo: 'https://github.com/derzierau/freilanz.git'
+    - id: 'iisy'
       name: 'iisy'
-    - short_name: 'mailer'
+    - id: 'mailer'
       name: 'mailer'
       open_with: 'code'
-services: 
-- public_name: 'Senior Fullstack Developer'
-  base_hourly_rate: 75
-  short_name: 'dev'
+positions: 
+- name: 'Senior Fullstack Developer'
+  hourly_rate: 75
+  id: 'dev'
   default: true
-- short_name: 'arc'
-  public_name: 'Cloud & Software Architect'
-  base_hourly_rate: 75
-- public_name: 'Product Engineer'
-  short_name: 'pe'
+- id: 'arc'
+  name: 'Cloud & Software Architect'
+  hourly_rate: 75
+- name: 'Product Engineer'
+  id: 'pe'

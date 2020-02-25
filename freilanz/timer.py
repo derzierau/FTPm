@@ -26,7 +26,7 @@ class Timer:
             'project': [kwargs.get('project', self.project)],
             'account': [kwargs.get('account', self.account)],
             'path': [kwargs.get('path', self.current_path)],
-            'service': [kwargs.get('service', self.config.default_service()['short_name'])],
+            'service': [kwargs.get('service', self.config.default_service()['id'])],
             'message': [kwargs.get('message', None)],
             'timestamp': [timestamp],
             'action': [action],

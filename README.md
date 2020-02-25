@@ -4,7 +4,6 @@
 ```
 python3 setup.py install
 ```
-
 ```
 ftpm init
 ftpm init --config CONFIG_PATH
